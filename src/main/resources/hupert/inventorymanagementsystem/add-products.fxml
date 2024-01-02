@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="557.0" minWidth="863.0" prefHeight="557.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hupert.inventorymanagementsystem.addProdController">
+   <children>
+      <Label layoutX="62.0" layoutY="56.0" text="Add Product">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="101.0" text="ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prodIDField" disable="true" layoutX="134.0" layoutY="98.0" prefHeight="25.0" prefWidth="149.0" promptText="Disabled - Auto Gen ID">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="prodNameField" layoutX="134.0" layoutY="133.0" />
+      <TextField fx:id="prodInvField" layoutX="134.0" layoutY="165.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="prodPriceField" layoutX="134.0" layoutY="200.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="prodMaxField" layoutX="134.0" layoutY="234.0" prefHeight="25.0" prefWidth="59.0" />
+      <TextField fx:id="prodMinField" layoutX="253.0" layoutY="235.0" prefHeight="25.0" prefWidth="59.0" />
+      <Label layoutX="67.0" layoutY="136.0" text="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="168.0" text="Inventory">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="204.0" text="Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="237.0" text="Max">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="237.0" text="Min">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="prodSave" layoutX="61.0" layoutY="496.0" mnemonicParsing="false" onAction="#onProdSaveClick" text="Save" />
+      <Button fx:id="prodCancel" layoutX="116.0" layoutY="496.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+      <TextField fx:id="partSearchField" layoutX="597.0" layoutY="57.0" onAction="#partSearchHandler" prefHeight="25.0" prefWidth="226.0" promptText="Search by Part Id or Name" />
+      <TableView fx:id="partAddTable" layoutX="397.0" layoutY="90.0" prefHeight="175.0" prefWidth="428.0">
+        <columns>
+          <TableColumn fx:id="addPartIdCol" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="addPartNameCol" prefWidth="171.0" text="Part Name" />
+            <TableColumn fx:id="addPartInvCol" prefWidth="86.0" text="Inventory" />
+            <TableColumn fx:id="addPartPriceCol" prefWidth="95.0" text="Price" />
+        </columns>
+      </TableView>
+      <TableView fx:id="associatedPartTable" layoutX="397.0" layoutY="315.0" prefHeight="175.0" prefWidth="428.0">
+        <columns>
+          <TableColumn fx:id="apPartIdCol" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="apPartNameCol" prefWidth="164.0" text="Part Name" />
+            <TableColumn fx:id="apPartInvCol" prefWidth="93.0" text="Inventory" />
+            <TableColumn fx:id="apPartPriceCol" prefWidth="95.0" text="Price" />
+        </columns>
+      </TableView>
+      <Button fx:id="addPartButton" layoutX="641.0" layoutY="279.0" mnemonicParsing="false" onAction="#onAddPartButtonClick" prefHeight="25.0" prefWidth="173.0" text="Add Associated Part" />
+      <Button fx:id="removePartButton" layoutX="650.0" layoutY="496.0" mnemonicParsing="false" onAction="#onRemovePartButtonClick" prefHeight="25.0" prefWidth="173.0" text="Remove Associated Part" />
+      <Label fx:id="inputErrorLabel" layoutX="61.0" layoutY="282.0" text="Inventory count must be between Min and Max" textFill="#f50808" visible="false">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="intErrorLabel" layoutX="60.0" layoutY="332.0" text="Inventory, Max, and Min fields must be integer" textFill="#ee0e0e" visible="false">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceErrorLabel" layoutX="60.0" layoutY="364.0" text="Price must be doubel" textFill="#e81414" visible="false">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

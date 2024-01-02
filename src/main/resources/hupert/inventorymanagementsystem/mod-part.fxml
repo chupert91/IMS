@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hupert.inventorymanagementsystem.modPartController">
+    <children>
+        <Label layoutX="65.0" layoutY="56.0" text="Modify Part">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="modPartIHRadial" layoutX="200.0" layoutY="59.0" mnemonicParsing="false" onAction="#onInHouseSelected" text="In-House">
+            <font>
+                <Font size="14.0" />
+            </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="mpGroup" />
+         </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="modPartOutsourcedRadial" layoutX="300.0" layoutY="59.0" mnemonicParsing="false" onAction="#onOutsourcedSelected" text="Outsourced" toggleGroup="$mpGroup">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </RadioButton>
+        <Label layoutX="67.0" layoutY="101.0" text="ID">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="modPartIDField" editable="false" layoutX="134.0" layoutY="98.0" />
+        <TextField fx:id="modPartNameField" layoutX="134.0" layoutY="133.0" />
+        <TextField fx:id="modPartInvField" layoutX="134.0" layoutY="165.0" />
+        <TextField fx:id="modPartPriceField" layoutX="134.0" layoutY="200.0" />
+        <TextField fx:id="modPartMaxField" layoutX="134.0" layoutY="234.0" />
+        <TextField fx:id="modPartMachineID" layoutX="134.0" layoutY="269.0" />
+        <TextField fx:id="modPartMinField" layoutX="361.0" layoutY="234.0" />
+        <Label layoutX="67.0" layoutY="136.0" text="Name">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="56.0" layoutY="168.0" text="Inventory">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="67.0" layoutY="204.0" text="Price">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="68.0" layoutY="237.0" text="Max">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="313.0" layoutY="237.0" text="Min">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="modSuperLabel" layoutX="59.0" layoutY="272.0" text="Machine ID">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Button fx:id="modPartSave" layoutX="361.0" layoutY="325.0" mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+        <Button fx:id="modPartCancel" layoutX="410.0" layoutY="325.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+      <Label fx:id="inputErrorLabel" layoutX="147.0" layoutY="360.0" text="Inventory count must be between Max and Min" textFill="#e40707" visible="false">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="intErrorLabel" layoutX="104.0" layoutY="360.0" text="Inventory, Max, Min &amp; Machine ID fields must be integer" textFill="#e40a0a" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceErrorLabel" layoutX="130.0" layoutY="331.0" text="Price field must be double" textFill="#e80909" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+    </children>
+
+</AnchorPane>
